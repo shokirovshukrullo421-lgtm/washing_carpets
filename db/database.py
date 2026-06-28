@@ -13,6 +13,7 @@ async def create_pool():
     if database_url:
         pool = await asyncpg.create_pool(
             dsn=database_url,
+            ssl="require",
             min_size=2,
             max_size=10
         )
